@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class InputsPage {
   private static final By FIELD_EMAIL = By.id("dataEmail");
@@ -118,7 +119,7 @@ public class InputsPage {
     wait.until(d -> d.findElements(DATA_TABLE_TR).size() == before + 1);
   }
   public List<String> getLastRowText() {
-    return driver.findElements(DATA_TABLE_TR_LAST_CHILD).stream().map(WebElement::getText).toList();
+    return driver.findElements(DATA_TABLE_TR_LAST_CHILD).stream().map(WebElement::getText).collect(Collectors.toList());
   }
 
 }
