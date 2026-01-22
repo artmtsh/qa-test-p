@@ -12,24 +12,22 @@ import java.time.Duration;
 import java.util.List;
 
 public class InputsPage {
-  private final By FIELD_EMAIL = By.id("dataEmail");
-  private final By FIELD_NAME = By.id("dataName");
-  private final By SELECT_GENDER = By.id("dataGender");
-  private final By CHECKBOX_11 = By.id("dataCheck11");
-  private final By CHECKBOX_12 = By.id("dataCheck12");
-  private final By RADIO_21 = By.id("dataSelect21");
-  private final By RADIO_22 = By.id("dataSelect22");
-  private final By RADIO_23 = By.id("dataSelect23");
-  private final By BUTTON_ADD = By.id("dataSend");
-  private final By BUTTON_OK = By.cssSelector(".uk-modal.uk-open .uk-modal-close");
+  private static final By FIELD_EMAIL = By.id("dataEmail");
+  private static final By FIELD_NAME = By.id("dataName");
+  private static final By SELECT_GENDER = By.id("dataGender");
+  private static final By CHECKBOX_11 = By.id("dataCheck11");
+  private static final By CHECKBOX_12 = By.id("dataCheck12");
+  private static final By RADIO_21 = By.id("dataSelect21");
+  private static final By RADIO_22 = By.id("dataSelect22");
+  private static final By RADIO_23 = By.id("dataSelect23");
+  private static final By BUTTON_ADD = By.id("dataSend");
+  private static final By BUTTON_OK = By.cssSelector(".uk-modal.uk-open .uk-modal-close");
 
+  private static final By ERROR_EMAIL_FORMAT = By.id("emailFormatError");
+  private static final By ERROR_EMPTY_NAME = By.id("blankNameError");
 
-
-  private final By ERROR_EMAIL_FORMAT = By.id("emailFormatError");
-  private final By ERROR_EMPTY_NAME = By.id("blankNameError");
-
-  private final By DATA_TABLE_TR = By.cssSelector("#dataTable tbody tr");
-  private final By DATA_TABLE_TR_LAST_CHILD = By.cssSelector("#dataTable tbody tr:last-child td");
+  private static final By DATA_TABLE_TR = By.cssSelector("#dataTable tbody tr");
+  private static final By DATA_TABLE_TR_LAST_CHILD = By.cssSelector("#dataTable tbody tr:last-child td");
 
   private final WebDriverWait wait;
 
