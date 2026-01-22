@@ -90,8 +90,8 @@ public class InputsPage {
     var checkbox = wait.until(ExpectedConditions.elementToBeClickable(locator));
     checkbox.click();
   }
-  public void setOption11() { setCheckbox(CHECKBOX_11); }
-  public void setOption12() { setCheckbox(CHECKBOX_12); }
+  public void toggleOption11() { setCheckbox(CHECKBOX_11); }
+  public void toggleOption12() { setCheckbox(CHECKBOX_12); }
 
   private void selectRadio(By locator) {
     var radio = wait.until(ExpectedConditions.elementToBeClickable(locator));
