@@ -88,9 +88,7 @@ public class InputsPage {
 
   private void setCheckbox(By locator) {
     var checkbox = wait.until(ExpectedConditions.elementToBeClickable(locator));
-    if (!checkbox.isSelected()) {
-      checkbox.click();
-    }
+    checkbox.click();
   }
   public void setOption11() { setCheckbox(CHECKBOX_11); }
   public void setOption12() { setCheckbox(CHECKBOX_12); }
