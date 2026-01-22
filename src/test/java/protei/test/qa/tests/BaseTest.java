@@ -1,7 +1,6 @@
 package protei.test.qa.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +15,7 @@ public abstract class BaseTest {
   protected WebDriver webDriver;
 
   @BeforeAll
-  static void SetupDriver(){
+  static void setUpDriver(){
     WebDriverManager.chromedriver().setup();
   }
 
