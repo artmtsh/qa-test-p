@@ -85,7 +85,7 @@ public class InputsPage {
     genderSelect.selectByVisibleText(gender);
   }
 
-  private void setCheckbox(By locator) {
+  private void toggleCheckbox(By locator) {
     var checkbox = wait.until(ExpectedConditions.elementToBeClickable(locator));
     checkbox.click();
   }
