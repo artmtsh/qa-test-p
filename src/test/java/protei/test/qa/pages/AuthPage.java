@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AuthPage {
-  private final By FIELD_EMAIL = By.id("loginEmail");
-  private final By FIELD_PASSWORD = By.id("loginPassword");
-  private final By BUTTON_AUTH = By.id("authButton");
+  private static final By FIELD_EMAIL = By.id("loginEmail");
+  private static final By FIELD_PASSWORD = By.id("loginPassword");
+  private static final By BUTTON_AUTH = By.id("authButton");
 
-  private final By ERROR_EMAIL_FORMAT = By.id("emailFormatError");
-  private final By ERROR_INVALID_EMAIL_PASSWORD = By.id("invalidEmailPassword");
+  private static final By ERROR_EMAIL_FORMAT = By.id("emailFormatError");
+  private static final By ERROR_INVALID_EMAIL_PASSWORD = By.id("invalidEmailPassword");
   private final WebDriverWait wait;
 
   public AuthPage(WebDriver driver) {
