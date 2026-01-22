@@ -127,4 +127,16 @@ public class InputsPage {
     return driver.findElements(DATA_TABLE_TR_LAST_CHILD).stream().map(WebElement::getText).collect(Collectors.toList());
   }
 
+  public void clearForm() {
+    wait.until(ExpectedConditions.visibilityOfElementLocated(FIELD_EMAIL)).clear();
+    wait.until(ExpectedConditions.visibilityOfElementLocated(FIELD_NAME)).clear();
+    var checkbox11 = wait.until(ExpectedConditions.elementToBeClickable(CHECKBOX_11));
+    if (checkbox11.isSelected()) {
+      checkbox11.click();
+    }
+    var checkbox12 = wait.until(ExpectedConditions.elementToBeClickable(CHECKBOX_12));
+    if (checkbox12.isSelected()) {
+      checkbox12.click();
+    }
+  }
 }
