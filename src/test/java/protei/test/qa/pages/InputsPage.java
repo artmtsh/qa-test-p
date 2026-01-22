@@ -32,7 +32,7 @@ public class InputsPage {
 
   private final WebDriverWait wait;
 
-    private final WebDriver driver;
+  private final WebDriver driver;
   public InputsPage(WebDriver driver) {
     this.driver = driver;
     this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -73,13 +73,13 @@ public class InputsPage {
     fieldEmail.sendKeys(email);
   }
 
-  public void fillInName(String name){
+  public void fillInName(String name) {
     var fieldName = wait.until(ExpectedConditions.visibilityOfElementLocated(FIELD_NAME));
     fieldName.clear();
     fieldName.sendKeys(name);
   }
 
-  public void chooseGender(String gender){
+  public void chooseGender(String gender) {
     var selectElement = wait.until(ExpectedConditions.visibilityOfElementLocated(SELECT_GENDER));
     Select genderSelect = new Select(selectElement);
     genderSelect.selectByVisibleText(gender);
@@ -89,8 +89,14 @@ public class InputsPage {
     var checkbox = wait.until(ExpectedConditions.elementToBeClickable(locator));
     checkbox.click();
   }
-  public void toggleOption11() { setCheckbox(CHECKBOX_11); }
-  public void toggleOption12() { setCheckbox(CHECKBOX_12); }
+
+  public void toggleOption11() {
+    toggleCheckbox(CHECKBOX_11);
+  }
+
+  public void toggleOption12() {
+    toggleCheckbox(CHECKBOX_12);
+  }
 
   private void selectRadio(By locator) {
     var radio = wait.until(ExpectedConditions.elementToBeClickable(locator));
@@ -99,15 +105,36 @@ public class InputsPage {
     }
   }
 
-  public void selectVariant21() { selectRadio(RADIO_21); }
-  public void selectVariant22() { selectRadio(RADIO_22); }
-  public void selectVariant23() { selectRadio(RADIO_23); }
+  public void selectVariant21() {
+    selectRadio(RADIO_21);
+  }
 
-  public void clickAdd(){
+  public void selectVariant22() {
+    selectRadio(RADIO_22);
+  }
+
+  public void selectVariant23() {
+    selectRadio(RADIO_23);
+  }
+
+  public void fillEmailNameGender(String email, String name, String gender) {
+    if (email != null) {
+      fillInEmailField(email);
+    }
+    if (name != null) {
+      fillInName(name);
+    }
+    if (gender != null) {
+      chooseGender(gender);
+    }
+  }
+
+
+  public void clickAdd() {
     wait.until(ExpectedConditions.elementToBeClickable(BUTTON_ADD)).click();
   }
 
-  public void clickOK(){
+  public void clickOK() {
     wait.until(ExpectedConditions.elementToBeClickable(BUTTON_OK)).click();
   }
 
@@ -119,10 +146,7 @@ public class InputsPage {
   public int getRowsCount() {
     return driver.findElements(DATA_TABLE_TR).size();
   }
-  //[!too much]
-  public void waitRowAdded(int before) {
-    wait.until(d -> d.findElements(DATA_TABLE_TR).size() == before + 1);
-  }
+
   public List<String> getLastRowText() {
     return driver.findElements(DATA_TABLE_TR_LAST_CHILD).stream().map(WebElement::getText).collect(Collectors.toList());
   }
