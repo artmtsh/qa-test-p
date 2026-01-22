@@ -111,7 +111,12 @@ public class InputsPage {
     wait.until(ExpectedConditions.elementToBeClickable(BUTTON_OK)).click();
   }
 
-  public int getRowsCount(){
+  public void submitForm() {
+    clickAdd();
+    clickOK();
+  }
+
+  public int getRowsCount() {
     return driver.findElements(DATA_TABLE_TR).size();
   }
   //[!too much]
