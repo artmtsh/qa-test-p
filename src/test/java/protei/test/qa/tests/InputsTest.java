@@ -20,6 +20,7 @@ public class InputsTest extends BaseTest {
     var authPage = new AuthPage(webDriver);
     authPage.authenticate(BASE_EMAIL, BASE_PASSWORD);
     inputPage = new InputsPage(webDriver);
+    Assertions.assertTrue(inputPage.isInputsPageOpened());
   }
 
   @Test
