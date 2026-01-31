@@ -1,10 +1,22 @@
-# Gradle
-demo/.gradle/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
 build/
 
-# IntelliJ IDEA
-.idea/
-*.iml
+# Virtualenv
+venv/
+.venv/
 
-# Logs
-*.log
+# Pytest
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
