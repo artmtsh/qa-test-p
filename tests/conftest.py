@@ -11,7 +11,6 @@ def driver():
     driver = webdriver.Chrome(service=service)
     driver.maximize_window()
 
-    # conftest.py лежит в tests/, а html лежит в tests/resources/
     current_dir = os.path.dirname(__file__)
     file_path = os.path.join(current_dir, "resources", "qa-test.html")
 

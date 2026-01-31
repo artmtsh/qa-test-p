@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 class InputsPage:
-    # Локаторы
     FIELD_EMAIL = (By.ID, "dataEmail")
     FIELD_NAME = (By.ID, "dataName")
     SELECT_GENDER = (By.ID, "dataGender")
@@ -102,7 +101,6 @@ class InputsPage:
         return len(self.driver.find_elements(*self.DATA_TABLE_TR))
 
     def get_last_row_text(self) -> list[str]:
-        # Pythonic way: list comprehension вместо stream().map().collect()
         elements = self.driver.find_elements(*self.DATA_TABLE_TR_LAST_CHILD)
         return [el.text for el in elements]
 
@@ -110,7 +108,6 @@ class InputsPage:
         self.wait.until(EC.visibility_of_element_located(self.FIELD_EMAIL)).clear()
         self.wait.until(EC.visibility_of_element_located(self.FIELD_NAME)).clear()
 
-        # Снятие чекбоксов
         checkbox11 = self.wait.until(EC.element_to_be_clickable(self.CHECKBOX_11))
         if checkbox11.is_selected():
             checkbox11.click()

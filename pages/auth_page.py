@@ -4,7 +4,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 class AuthPage:
-    # Локаторы (в Python это просто кортежи)
     FIELD_EMAIL = (By.ID, "loginEmail")
     FIELD_PASSWORD = (By.ID, "loginPassword")
     BUTTON_AUTH = (By.ID, "authButton")
@@ -14,7 +13,6 @@ class AuthPage:
 
     def __init__(self, driver):
         self.driver = driver
-        # В Java было Duration.ofSeconds(5), тут просто число секунд
         self.wait = WebDriverWait(driver, 5)
 
     def is_invalid_email_format_visible(self) -> bool:

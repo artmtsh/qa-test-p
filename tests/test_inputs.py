@@ -40,13 +40,13 @@ class TestInputs:
         assert inputs_page.get_rows_count() == rows_before + 1
 
     @pytest.mark.parametrize("invalid_email", [
-        "",                 # пусто
-        "plainaddress",     # нет @
-        "email.example.com",# нет @
-        "@example.com",     # нет части до @
-        "test@",            # нет части после @
-        "-test@protei.ru",  # начинается с '-' (до @ нельзя '-')
-        "te-st@protei.ru",  # '-' в части до @ запрещён их regex'ом
+        "",
+        "plainaddress",
+        "email.example.com",
+        "@example.com",
+        "test@",
+        "-test@protei.ru",
+        "te-st@protei.ru",
     ])
     def test_should_show_email_format_error(self, inputs_page, invalid_email):
         inputs_page.fill_email_name_gender(invalid_email, "Test", "Мужской")
